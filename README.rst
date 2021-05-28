@@ -18,6 +18,7 @@ Installation Instructions:
 Steps involved in execution:
 
 A. Go to the parent directory of the distribution component and perform the execution steps listed below:
+
    1. Generate distribution system feeder populated with households with the choice of 'Household Type' by executing the following:
 
      python IEEE123_glm_yaml_bat_writer.py NDistSys Mix Type
