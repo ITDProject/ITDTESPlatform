@@ -12,8 +12,7 @@ Installation Instructions:
 
 2. Install the transmission component of the ITDTESPlatformV2.0, AMES V5.0, by following the installation instructions given at: https://github.com/ames-market/AMES-V5.0/blob/master/INSTALLATION.rst
 
-3. Download the contents of the distribution component of ITDTESPlatformV2.0 located at https://github.com/ITDProject/HouseholdFormulationRepository into the directory 'ITDTESPlatformV2.0'.
-Follow the installation instructions given at https://github.com/ITDProject/HouseholdFormulationRepository#readme to install the necessary components.
+3. Download the contents of the distribution component of ITDTESPlatformV2.0 located at https://github.com/ITDProject/HouseholdFormulationRepository into the directory 'ITDTESPlatformV2.0'. Follow the installation instructions given at https://github.com/ITDProject/HouseholdFormulationRepository#readme to install the necessary components.
 
 
 Steps involved in execution:
@@ -43,7 +42,7 @@ A. Go to the parent directory of the distribution component and perform the exec
 
      (Example usage: python IEEE123_glm_yaml_bat_writer.py 1 0 2)
 
-  2. Generate required additional files by executing the following command:
+   2. Generate required additional files by executing the following command:
 
      python prep_agents123.py FileName NDistSys 
 
@@ -58,13 +57,13 @@ A. Go to the parent directory of the distribution component and perform the exec
      Outcomes: FNCS configuration txt file and json registration files for IDSO and households.
      FNCS configuration txt file contains needed input information for configuring GridLAB-D subscriptions and publications. IDSO json file contains needed input information for the IDSO and Household json file contains household specific information (household attributes).
 
-  3. Set the following parameters in the runITD.bat
+   3. Set the following parameters in the runITD.bat
 
      TSDir - Set the path of parent directory of AMES
      TDIDir - Set the path of TDIInterconnectionFiles folder to this parameter
      DSDir - Set the path of HouseholdFormulationRepository folder to this parameter
      AMESVersion - Set the version of AMES (e.g. AMESV5.0)
-     
+
      NDay - Number of days the simulation needs to be carried out
 
      NHour - Number of additional hours the simulation needs to be carried out after the simulation is run for NDay
