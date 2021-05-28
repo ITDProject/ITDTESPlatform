@@ -1,6 +1,6 @@
-# ITDTESPlatform
+# ITDTESPlatformV2.0
 
-The code/data in this repository are for ITDTESPlatform provided in support of the thesis Ref. [1]. 
+The code/data in this repository are for ITDTESPlatformV2.0 provided in support of the thesis Ref. [1]. 
 
 [1] Swathi Battula (2021),  "Transactive Energy System Design for Integrated Transmission and Distribution Systems,” Graduate Theses and Dissertations, Iowa State University.
 
