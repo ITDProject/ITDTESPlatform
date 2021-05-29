@@ -70,8 +70,4 @@ set FNCS_LOG_LEVEL=DEBUG2
 FOR /L %%i IN (1,1,%NDSystems%) DO start /b cmd /c gridlabd IEEE123Modified%%i.glm ^>%logfilesdir%/gridlabd%%i.log 2^>^&1
 
 set FNCS_LOG_LEVEL=
-REM runHouseholds927.bat
-start /b cmd /c python smart_controller.py input/controller_registration_house_1A_1_thermostat_controller.json %tmax% %deltaT% ^>%logfilesdir%/house_1A_1.log 2^>^&1
-start /b cmd /c python smart_controller.py input/controller_registration_house_1A_2_thermostat_controller.json %tmax% %deltaT% ^>%logfilesdir%/house_1A_2.log 2^>^&1
-start /b cmd /c python smart_controller.py input/controller_registration_house_1A_3_thermostat_controller.json %tmax% %deltaT% ^>%logfilesdir%/house_1A_3.log 2^>^&1
-start /b cmd /c python smart_controller.py input/controller_registration_house_1A_4_thermostat_controller.json %tmax% %deltaT% ^>%logfilesdir%/house_1A_4.log 2^>^&1
+runHouseholds927.bat
