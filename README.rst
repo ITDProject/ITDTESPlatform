@@ -1,4 +1,4 @@
-# ITDTESPlatformV2.0
+# ITDTESPlatformV2.X
 
 The code/data in this repository are for ITDTESPlatformV2.0 provided in support of the thesis Ref. [1]. 
 
