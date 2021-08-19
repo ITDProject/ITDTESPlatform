@@ -1,6 +1,8 @@
-# ITDTESPlatformV2.X
+# ITDTESPlatformV2.1
 
-The code/data in this repository are for ITDTESPlatformV2.0 provided in support of the thesis Ref. [1]. 
+The code/data in this repository are for ITDTESPlatformV2.1 provided in support of the thesis Ref. [1]. 
+
+The code/data in this repository is for ITD TES Platform that is developed as part of our ITD project. The details of this project can be found at http://www2.econ.iastate.edu/tesfatsi/ITDProjectHome.htm
 
 [1] Swathi Battula (2021),  "Transactive Energy System Design for Integrated Transmission and Distribution Systems,” Graduate Theses and Dissertations, Iowa State University.
 
@@ -8,11 +10,11 @@ Currently, this repository is only supported on a Windows operating system.
 
 Installation Instructions:
 
-1. Download the contents of this repository into a folder, let's call it 'ITDTESPlatformV2.0'. Now make 'ITDTESPlatformV2.0' the parent directory to install the components given in the steps 2 and 3.
+1. Download the contents of this repository into a folder, let's call it 'ITDTESPlatformV2.1'. Now make 'ITDTESPlatformV2.1' the parent directory to install the components given in the steps 2 and 3.
 
-2. Install the transmission component of the ITDTESPlatformV2.0, AMES V5.0, by following the installation instructions given at: https://github.com/ames-market/AMES-V5.0/blob/master/INSTALLATION.rst
+2. Install the transmission component of the ITDTESPlatformV2.1, AMES V5.1, by following the installation instructions given at: https://github.com/ITDProject/AMES/blob/V5.1/INSTALLATION.rst
 
-3. Download the contents of the distribution component of ITDTESPlatformV2.0 located at https://github.com/ITDProject/HouseholdFormulationRepository into the directory 'ITDTESPlatformV2.0'. Follow the installation instructions given at https://github.com/ITDProject/HouseholdFormulationRepository#readme to install the necessary components.
+3. Download the contents of the distribution component of ITDTESPlatformV2.1 located at https://github.com/ITDProject/DistributionSystemModels into the directory 'ITDTESPlatformV2.1'. Follow the installation instructions given at https://github.com/ITDProject/DistributionSystemModels/blob/main/README.md to install the necessary components.
 
 
 Steps involved in execution:
@@ -21,42 +23,52 @@ A. Go to the parent directory of the distribution component and perform the exec
 
    1. Generate distribution system feeder populated with households with the choice of 'Household Type' by executing the following:
 
-     python IEEE123_glm_yaml_bat_writer.py NDistSys Mix Type
+   python DistributionFeederWriter.py DistFeederFileName FeederLoadFileName NDistSys Mix Type TxBus
+   
+   The above commands depend on the following user-specified parameters: 
+   
+   DistFeederFileName - The name of the distribution feeder file, e.g. IEEE123.glm, IEEE13.glm, etc
+   
+   FeederLoadFileName - The name of the file that has original feeder load details
+   
+   NDistSys - The number of distribution systems that are handled by the IDSO
+   
+   Mix - Represents if the chosen households are a mix of different structure types or single structure type;
+   
+   Mix is set to 0: A single structure type, set by input parameter 'Type' described below, is chosen to populate the distribution system feeder;
+   
+   Mix is set to 1: A mix of structure types Low, Medium, High are used to populate the distribution system feeder;
+	 
+   Type - Represents household's structure quality type; 
+   
+	   Set Type to 1 for Low Structure Quality Type;
 
-     The above commands depend on the following user-specified parameters: 
+	   Set Type to 2 for Medium Structure Quality Type;
 
-     NDistSys - The number of distribution systems that are handled by the IDSO
-
-     Mix - Represents if the chosen households are a mix of different structure types or single structure type;
-
-     Mix is set to 0: A single structure type, set by input parameter 'Type' described below, is chosen to populate the distribution system feeder;
-
-     Mix is set to 1: A mix of structure types Low, Medium, High are used to populate the distribution system feeder;
-
-     Type - Represents household's structure quality type; 
-
-     Set Type to 1 for Low Structure Quality Type;
-
-     Set Type to 2 for Medium Structure Quality Type;
-
-     Set Type to 3 for High Structure Quality Type;
-
-     (Example usage: python IEEE123_glm_yaml_bat_writer.py 1 0 2)
+	   Set Type to 3 for High Structure Quality Type;
+	   
+   TxBus - The transmission bus to which the distribution system is considered to be connected to (Note: This input is needed if this model is used within an ITD system, else it defaults to 1)
+   
+   (Example usage: python DistributionFeederWriter.py IEEE123Feeder.glm IEEE123LoadObjects.txt 1 0 2 1)
+   
+   Outcomes: Distribution feeder populated by houses and a 'Yaml' file for IDSO. IDSO yaml file would contain all necessary details required to communicate with distribution agents (and transmission agents if this model is used within an ITD). 
 
    2. Generate required additional files by executing the following command:
-
-     python prep_agents123.py FileName NDistSys 
-
-     The above commands depend on the following user-specified parameters: 
-
-     FileName - The name of the distribution feeder generated in the above step (do not include .glm extension)
-
-     NDistSys - The number of distribution systems that are handled by the IDSO
-
-     (Example usage: python prep_agents123.py IEEEModified1 1)  
-
-     Outcomes: FNCS configuration txt file and json registration files for IDSO and households.
-     FNCS configuration txt file contains needed input information for configuring GridLAB-D subscriptions and publications. IDSO json file contains needed input information for the IDSO and Household json file contains household specific information (household attributes).
+   
+   python AgentPrep.py FileName NDistSys TxBus
+   
+   The above commands depend on the following user-specified parameters: 
+   
+   FileName - The name of the distribution feeder generated in the above step
+   
+   NDistSys - The number of distribution systems that are handled by the IDSO
+   
+   TxBus - The transmission bus to which the distribution system is considered to be connected to (Note: This input is needed if this model is used within an ITD system, else it defaults to 1)
+   
+   (Example usage: python AgentPrep.py IEEEModified1 1 1)  
+    		
+   Outcomes: FNCS configuration txt file and json registration files for IDSO and households.
+   FNCS configuration txt file contains needed input information for configuring GridLAB-D subscriptions and publications. IDSO json file contains needed input information for the IDSO and Household json file contains household specific information (household attributes).
 
    3. Set the following parameters in the runITD.bat
 
@@ -74,6 +86,8 @@ A. Go to the parent directory of the distribution component and perform the exec
      NoOfHouses - Number of households connected to the distribution system feeder
 
      NDsystems - Number of distribution systems monitored by the IDSO
+     
+     DistFeederFileName - The name of the distribution feeder file given in Step 1 (without '.glm' extension), e.g. IEEE123, IEEE13, etc
 
      C - Choose an appropriate case; 
 
@@ -89,5 +103,5 @@ B. Run all the distribution system processes together with transmission processe
    The above commands depend on the following user-specified parameter:
    FileName - The name of the input data file, e.g. 2BusTestCase
    
-C. Check additional instructions starting from Step 2 provided at https://github.com/ames-market/AMES-V5.0/blob/master/USAGE.pdf
+C. Check additional instructions starting from Step 2 provided at https://github.com/ITDProject/AMES/blob/V5.1/USAGE.pdf
    
