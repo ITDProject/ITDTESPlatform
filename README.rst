@@ -1,8 +1,6 @@
 # ITDTESPlatformV2.1
 
-The code/data in this repository are for ITDTESPlatformV2.1 provided in support of the ITD Project.
-
-The code/data in this repository is for ITD TES Platform that is developed as part of our ITD project. The details of this project can be found at http://www2.econ.iastate.edu/tesfatsi/ITDProjectHome.htm
+The code/data in this repository are for ITDTESPlatformV2.1 provided in support of the ITD Project. The details of this project can be found at http://www2.econ.iastate.edu/tesfatsi/ITDProjectHome.htm
 
 Currently, this repository is only supported on a Windows operating system.
 
@@ -17,9 +15,9 @@ Installation Instructions:
 
 Steps involved in execution:
 
-A. Go to the parent directory of the distribution component and perform the execution steps listed below:
+A. Go to the directory of the distribution component and perform the execution steps listed below:
 
-   1. Generate distribution system feeder populated with households with the choice of 'Household Type' by executing the following:
+   i. Generate distribution system feeder populated with households with the choice of 'Household Type' by executing the following:
 
    python DistributionFeederWriter.py DistFeederFileName FeederLoadFileName NDistSys Mix Type TxBus
    
@@ -51,7 +49,7 @@ A. Go to the parent directory of the distribution component and perform the exec
    
    Outcomes: Distribution feeder populated by houses and a 'Yaml' file for IDSO. IDSO yaml file would contain all necessary details required to communicate with distribution agents (and transmission agents if this model is used within an ITD). 
 
-   2. Generate required additional files by executing the following command:
+   ii. Generate required additional files by executing the following command:
    
    python AgentPrep.py FileName NDistSys TxBus
    
@@ -68,14 +66,18 @@ A. Go to the parent directory of the distribution component and perform the exec
    Outcomes: FNCS configuration txt file and json registration files for IDSO and households.
    FNCS configuration txt file contains needed input information for configuring GridLAB-D subscriptions and publications. IDSO json file contains needed input information for the IDSO and Household json file contains household specific information (household attributes).
 
-   3. Set the following parameters in the runITD.bat
+B. Go to the directory of the ITD TES Platform and perform the steps listed below:
 
-     TSDir - Set the path of parent directory of AMES
+   i. Generate YAML file for AMES by executing the below command:
+   
+      python YAMLWriter.py
+
+   ii. Set the following parameters in the runITD.bat
+
+     TSDir - Set the path of parent directory of AMES version that is being used
      TDIDir - Set the path of TDIInterconnectionFiles folder to this parameter
      DSDir - Set the path of HouseholdFormulationRepository folder to this parameter
-     AMESVersion - Set the version of AMES (e.g. AMESV5.0)
-
-     NDay - Number of days the simulation needs to be carried out
+     AMESVersion - Set the version of AMES (e.g. AMESV5.1)
 
      NHour - Number of additional hours the simulation needs to be carried out after the simulation is run for NDay
 
@@ -83,7 +85,7 @@ A. Go to the parent directory of the distribution component and perform the exec
 
      NoOfHouses - Number of households connected to the distribution system feeder
 
-     NDsystems - Number of distribution systems monitored by the IDSO
+     NDistSys - Number of distribution systems monitored by the IDSO
      
      DistFeederFileName - The name of the distribution feeder file given in Step 1 (without '.glm' extension), e.g. IEEE123, IEEE13, etc
 
@@ -96,10 +98,10 @@ A. Go to the parent directory of the distribution component and perform the exec
      Set C to 2 for generating test case outcomes for 'Test Case 3: IDSO Load Matching Capabilities'. Also set RefLoad
 
 
-B. Run all the distribution system processes together with transmission processes by executing the following command:
+C. Run all the distribution system processes together with transmission processes by executing the following command:
    runITD.bat FileName
-   The above commands depend on the following user-specified parameter:
+   The above command depends on the following user-specified parameter:
    FileName - The name of the input data file, e.g. 2BusTestCase
    
-C. Check additional instructions starting from Step 2 provided at https://github.com/ITDProject/AMES/blob/V5.1/USAGE.pdf
+D. Check additional instructions starting from Step 2 provided at https://github.com/ITDProject/AMES/blob/V5.1/USAGE.pdf
    
