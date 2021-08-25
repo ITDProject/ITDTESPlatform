@@ -104,4 +104,3 @@ C. Run all the distribution system processes together with transmission processe
    FileName - The name of the input data file, e.g. 2BusTestCase
    
 D. Check additional instructions starting from Step 2 provided at https://github.com/ITDProject/AMES/blob/V5.1/USAGE.pdf
-   
