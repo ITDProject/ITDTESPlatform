@@ -1,17 +1,19 @@
-import math
-import csv
 import sys
 import json
+
+from pathlib import Path
+file = Path(__file__).resolve()
+parent, root = file.parent, file.parents[1]
+sys.path.append(str(root))
 import fncs
-import re
-import cmath
 
 FileName = 'NetLoadScData.2BusTestCase.DAM.json'
+FilePath = './Forecast/Data/'
 
 def NetLoadScenarioDataJsonFormat(filename):
 	NLSE = 0
 	NDay = 0
-	f = open('./LoadForecast/'+filename,'r')
+	f = open(FilePath + filename,'r')
 	NetLoadScenarioData = json.load(f)
 	NLSE = len(NetLoadScenarioData)
 	NDay = [len(val) for key, val in NetLoadScenarioData[0].items()]
@@ -32,13 +34,13 @@ def loadforecast_RP(h, d, filename):
 	
 	print('h, d:', h, d)
 	#24 hour vector -> DAM
-	x = (d* day_len)*unit + (H-1) * (hour_len)*unit - M*min_len*unit - 1*unit
+	x = (d* day_len)*unit + (H-1) * (hour_len)*unit # - 1*unit
 	print('x:',x)
 	print('NLSE:'+str(NLSE))
 	for i in range(NLSE):
 		for j in range(24):
 			#load.append((x,'loadforecastDAM_h'+str(j), float(loadforecast[j])*1)) # replace 1 with
-			load.append((x,'loadforecastDAM_LSE' +str(i+1)+ '_H'+str(j), float(NetLoadScenarioData[i][ListLSENodes[i]][d1][j])))
+			load.append((x,'loadforecastDAM_LSE' +str(i+1)+ '_H'+str(j+1), float(NetLoadScenarioData[i][ListLSENodes[i]][d1][j])))
 	return None
 
 def get_number(value):
@@ -88,7 +90,7 @@ while ts <= tmax:
 			if(ts >= load[i][0]):
 				#print ('ts4: ',ts, flush = True)
 				if(ts == load[i][0]):
-					print('Publishing loadforecast to AMES: ', str(load[i][0]), str(load[i][1]), load[i][2], flush = True)
+					print('Publishing load forecast to AMES: ', str(load[i][0]), str(load[i][1]), load[i][2], flush = True)
 					fncs.publish(str(load[i][1]), load[i][2])
 			else:
 				break

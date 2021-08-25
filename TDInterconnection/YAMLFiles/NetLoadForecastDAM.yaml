@@ -1,4 +1,4 @@
 name: NetLoadForecastDAM
-time_delta: 1s
+time_delta: 300s
 broker: tcp://localhost:5570
 values:

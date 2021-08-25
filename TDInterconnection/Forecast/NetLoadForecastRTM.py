@@ -1,17 +1,19 @@
-import math
-import csv
 import sys
 import json
+
+from pathlib import Path
+file = Path(__file__).resolve()
+parent, root = file.parent, file.parents[1]
+sys.path.append(str(root))
 import fncs
-import re
-import cmath
 
 FileName = 'NetLoadScData.2BusTestCase.RTM.json'
+FilePath = './Forecast/Data/'
 
 def NetLoadScenarioDataJsonFormat(filename):
 	NLSE = 0
 	NDay = 0
-	f = open('./LoadForecast/'+filename,'r')
+	f = open(FilePath + filename,'r')
 	NetLoadScenarioData = json.load(f)
 	NLSE = len(NetLoadScenarioData)
 	NDay = [len(val) for key, val in NetLoadScenarioData[0].items()]
@@ -44,11 +46,17 @@ def loadforecast_RP(h, d, filename):
 	print('d, h:', d, h)
 	#print('NLSE:'+str(NLSE))
 	#RTM
-	y = (h* hour_len)*unit + (d)*(day_len)*unit + M*min_len*unit- 1*unit #10*10*1000000000
-	print('RTM:',y)
-	for i in range(NLSE):
-		load.append((y, 'loadforecastRTM_'+str(i+1), float(NetLoadScenarioData[i][ListLSENodes[i]][d2][h1])))
-		print('d2, h1:', d2, h1, float(NetLoadScenarioData[i][ListLSENodes[i]][d2][h1]))
+	#y = (h* hour_len)*unit + (d)*(day_len)*unit + M*min_len*unit #- 1*unit #10*10*1000000000
+	#y = ((h+1) * hour_len) * unit + (d) * (day_len) * unit - M * min_len * unit #- 1*unit #10*10*1000000000
+	#print('RTM:',y)
+	NSteps = (int) (hour_len / (M * min_len))
+	print('NSteps:', NSteps)
+	for count in range(NSteps):
+		y = ((h+1) * hour_len) * unit + (d) * (day_len) * unit - M * min_len * unit + count * M * min_len * unit #- 1*unit #10*10*1000000000
+		print('RTM y:', y)
+		for i in range(NLSE):
+			load.append((y, 'loadforecastRTM_LSE'+str(i+1), float(NetLoadScenarioData[i][ListLSENodes[i]][d2][h1-1])))
+			print('d2, h1:', d2, h1, float(NetLoadScenarioData[i][ListLSENodes[i]][d2][h1-1]))
 	return None
 
 def get_number(value):
@@ -69,13 +77,14 @@ fncs.initialize()
 ts = 0
 timeSim = 0
 
-H = 6
-M = 60 
 min_len = 60
 hour_len = 60 * min_len #100 # in s
 day_len = 24* hour_len # in s
 prev_hour = 0
 prev_day = 0
+
+M = (int) (deltaT/ min_len)
+print('M:', M)
 
 load = []
 
@@ -101,7 +110,7 @@ while ts <= tmax:
 			if(ts >= load[i][0]):
 				#print ('ts4: ',ts, flush = True)
 				if(ts == load[i][0]):
-					print('Publishing loadforecast to AMES: ', str(load[i][0]), str(load[i][1]), load[i][2], flush = True)
+					print('Publishing load forecast to AMES: ', str(load[i][0]), str(load[i][1]), load[i][2], flush = True)
 					fncs.publish(str(load[i][1]), load[i][2])
 			else:
 				break
