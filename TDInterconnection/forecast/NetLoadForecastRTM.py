@@ -31,8 +31,8 @@ def loadforecast_RP(h, d, filename):
 			ListLSENodes.append(k)
 	#print('ListLSENodes:', ListLSENodes)
 	if h ==22:
-		h1 = 0
-		d2 = d
+		h1 = 24
+		d2 = d-1
 	elif h ==23:
 		h1 = 1
 		d2 = d
@@ -64,10 +64,10 @@ def get_number(value):
 
 if len(sys.argv) == 3:
 	tmax = int(sys.argv[1])
-	deltaT = int(sys.argv[2])
+	RTOPDur = int(sys.argv[2])
 elif len(sys.argv) == 1:
 	tmax = 2 * 24 * 3600 #172800
-	deltaT = 1
+	RTOPDur = 5
 else:
 	print ('usage: python loadforecast.py [tmax deltaT]')
 	sys.exit()
@@ -83,7 +83,9 @@ day_len = 24* hour_len # in s
 prev_hour = 0
 prev_day = 0
 
-M = (int) (deltaT/ min_len)
+deltaT = RTOPDur * min_len
+M = RTOPDur
+#M = (int) (deltaT/ min_len)
 print('M:', M)
 
 load = []

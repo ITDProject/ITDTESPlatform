@@ -48,10 +48,10 @@ def get_number(value):
 
 if len(sys.argv) == 3:
 	tmax = int(sys.argv[1])
-	deltaT = int(sys.argv[2])
+	RTOPDur = int(sys.argv[2])
 elif len(sys.argv) == 1:
 	tmax = 2 * 24 * 3600 #172800
-	deltaT = 1
+	RTOPDur = 5
 else:
 	print ('usage: python loadforecast.py [tmax deltaT]')
 	sys.exit()
@@ -68,6 +68,9 @@ hour_len = 60 * min_len #100 # in s
 day_len = 24* hour_len # in s
 prev_hour = 0
 prev_day = 0
+
+deltaT = RTOPDur * min_len
+print('deltaT:', deltaT)
 
 load = []
 
