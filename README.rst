@@ -85,7 +85,7 @@ In this repository, the ITD TES Platform versions start from V2.0; they do not b
    
       Note: 'agentPreparation.py' imports 'agentRegistration' class from 'agentRegistration.py'.
 
-#. Go to the directory of the ITD TES Platform and perform the steps listed below:
+#. Go to the directory 'TDInterconnection' and perform the steps listed below:
 
    #. Generate YAML file for AMES by executing the below command:
    
