@@ -1,6 +1,6 @@
-**# ITDTESPlatformV2.1**
+**# ITDTESPlatform**
 
-The code/data in this repository are for ITDTESPlatformV2.1 provided in support of the ITD Project. The details of this project can be found at http://www2.econ.iastate.edu/tesfatsi/ITDProjectHome.htm
+The code/data in this repository are for ITDTESPlatform provided in support of the ITD Project. The details of this project can be found at http://www2.econ.iastate.edu/tesfatsi/ITDProjectHome.htm
 
 A preliminary version of this platform is called ITDTESPlatformV1.0, developed by Hieu T. Nguyen, Swathi Battula, Rohit Reddy Takkala, Leigh Tesfatsion; see Nguyen et al. (2019), "An Integrated Transmission and Distribution Test System for Evaluation of Transactive Energy Designs," *Applied Energy*, Volume 240, 666-679. 
 
@@ -8,11 +8,11 @@ In this repository, the ITD TES Platform versions start from V2.0; they do not b
 
 **Installation Instructions:**
 
-#. Download the contents of this repository into a folder, let's call it 'ITDTESPlatformV2.1'. Now make 'ITDTESPlatformV2.1' the parent directory to install the components given in the steps 2 and 3.
+#. Download the contents of this repository into a folder, let's call it 'ITDTESPlatform'. Now make 'ITDTESPlatform' the parent directory to install the components given in the steps 2 and 3.
 
-#. Install the transmission component of the ITDTESPlatformV2.1, AMES V5.1, by following the installation instructions given at: https://github.com/ITDProject/AMES/blob/V5.1/INSTALLATION.rst
+#. Install the transmission component of the ITDTESPlatform, AMES, by following the installation instructions given at: https://github.com/ITDProject/AMES/blob/main/INSTALLATION.rst
 
-#. Download the contents of the distribution component of ITDTESPlatformV2.1 located at https://github.com/ITDProject/DistributionSystemModels into the directory 'ITDTESPlatformV2.1'. Follow the installation instructions given at https://github.com/ITDProject/DistributionSystemModels/blob/main/README.md to install the necessary components.
+#. Download the contents of the distribution component of ITDTESPlatform located at https://github.com/ITDProject/DistributionSystem into the directory 'ITDTESPlatform'. Follow the installation instructions given at https://github.com/ITDProject/DistributionSystem/blob/main/README.rst to install the necessary components.
 
 
 **Steps involved in execution:**
@@ -141,7 +141,7 @@ In this repository, the ITD TES Platform versions start from V2.0; they do not b
    
    * FileName - The name of the input data file, e.g. 2BusTestCase
    
-#. Check additional instructions starting from Step 2 provided at https://github.com/ITDProject/AMES/blob/V5.1/USAGE.pdf
+#. Check additional instructions starting from Step 2 provided at https://github.com/ITDProject/AMES/blob/main/USAGE.pdf
 
    
 **Miscellaneous Notes:** 
@@ -151,4 +151,4 @@ In this repository, the ITD TES Platform versions start from V2.0; they do not b
 * AMES generates a lot of temporary files. To delete them, execute 'deleteTempFiles.bat'. 
 * Note for developers: 
 	* For 'import fncs' to work, the environmental variable $PATH needs to be appended to add location of 'fncs.py'.
-	* If you make modifications to AMESV5.1, it can be compiled from ITD TES Platform repository as well by using 'compileAMES.bat'. Make sure that you have set the correct path and version by editing the file compileAMES.bat. 
+	* If you make modifications to AMES, it can be compiled from ITD TES Platform repository as well by using 'compileAMES.bat'. Make sure that you have set the correct path and version by editing the file compileAMES.bat. 
