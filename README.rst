@@ -4,7 +4,7 @@ The code/data in this repository are for ITDTESPlatformV2.1 provided in support 
 
 A preliminary version of this platform is called ITDTESPlatformV1.0, developed by Hieu T. Nguyen, Swathi Battula, Rohit Reddy Takkala, Leigh Tesfatsion; see Nguyen et al. (2019), "An Integrated Transmission and Distribution Test System for Evaluation of Transactive Energy Designs," *Applied Energy*, Volume 240, 666-679. 
 
-In this repository, the ITD TES Platform versions start from V2.0; they do not build on V1.0. Currently, these versions are only supported on a Windows operating system.
+In this repository, the ITD TES Platform versions start from V2.0; they do not build on V1.0. ITDTESPlatformV2.1 is only supported on a Windows operating system.
 
 **Installation Instructions:**
 
