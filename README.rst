@@ -1,4 +1,4 @@
-**# ITDTESPlatform**
+**# ITDTESPlatformV2.1**
 
 The code/data in this repository are for ITDTESPlatformV2.1 provided in support of the ITD Project. The details of this project can be found at http://www2.econ.iastate.edu/tesfatsi/ITDProjectHome.htm
 
@@ -12,7 +12,7 @@ In this repository, the ITD TES Platform versions start from V2.0; they do not b
 
 #. Install the transmission component of the ITDTESPlatformV2.1, AMES V5.1, by following the installation instructions given at: https://github.com/ITDProject/AMES/blob/V5.1/INSTALLATION.rst
 
-#. Download the contents of the distribution component of ITDTESPlatformV2.1 located at https://github.com/ITDProject/DistributionSystemModels into the directory 'ITDTESPlatformV2.1'. Follow the installation instructions given at https://github.com/ITDProject/DistributionSystemModels/blob/main/README.md to install the necessary components.
+#. Download the contents of the distribution component of ITDTESPlatformV2.1 located at https://github.com/ITDProject/DistributionSystem/tree/V1.0 into the directory 'ITDTESPlatformV2.1'. Follow the installation instructions given at https://github.com/ITDProject/DistributionSystem/blob/V1.0/README.rst to install the necessary components.
 
 
 **Steps involved in execution:**
