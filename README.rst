@@ -1,10 +1,12 @@
-# ITDTESPlatformV2.1
+**# ITDTESPlatformV2.1**
 
 The code/data in this repository are for ITDTESPlatformV2.1 provided in support of the ITD Project. The details of this project can be found at http://www2.econ.iastate.edu/tesfatsi/ITDProjectHome.htm
 
-Currently, this repository is only supported on a Windows operating system.
+A preliminary version of this platform is called ITDTESPlatformV1.0, developed by Hieu T. Nguyen, Swathi Battula, Rohit Reddy Takkala, Leigh Tesfatsion; see Nguyen et al. (2019), "An Integrated Transmission and Distribution Test System for Evaluation of Transactive Energy Designs," *Applied Energy*, Volume 240, 666-679. 
 
-Installation Instructions:
+In this repository, the ITD TES Platform versions start from V2.0; they do not build on V1.0. Currently, these versions are only supported on a Windows operating system.
+
+**Installation Instructions:**
 
 #. Download the contents of this repository into a folder, let's call it 'ITDTESPlatformV2.1'. Now make 'ITDTESPlatformV2.1' the parent directory to install the components given in the steps 2 and 3.
 
@@ -13,17 +15,17 @@ Installation Instructions:
 #. Download the contents of the distribution component of ITDTESPlatformV2.1 located at https://github.com/ITDProject/DistributionSystemModels into the directory 'ITDTESPlatformV2.1'. Follow the installation instructions given at https://github.com/ITDProject/DistributionSystemModels/blob/main/README.md to install the necessary components.
 
 
-Steps involved in execution:
+**Steps involved in execution:**
 
 #. Go to the directory of the distribution component and perform the execution steps listed below:
 
    #. Generate distribution system feeder populated with households with the choice of 'Household Type' by executing the following:
 
-      python DistributionFeederWriter.py DistFeederFileName FeederLoadFileName NDistSys Mix Type TxBus
+      python FeederWriter.py FeederFileName FeederLoadFileName NDistSys Mix Type TxBus
    
       The above commands depend on the following user-specified parameters: 
    
-      * DistFeederFileName - The name of the distribution feeder file, e.g. IEEE123.glm, IEEE13.glm, etc
+      * FeederFileName - The name of the feeder file, e.g. IEEE123.glm, IEEE13.glm, etc
    
       * FeederLoadFileName - The name of the file that has original feeder load details
    
@@ -65,12 +67,27 @@ Steps involved in execution:
     		
       Outcomes: FNCS configuration txt file and json registration files for IDSO and households.
       FNCS configuration txt file contains needed input information for configuring GridLAB-D subscriptions and publications. IDSO json file contains needed input information for the IDSO and Household json file contains household specific information (household attributes).
+      
+      Additional Note: AgentsPrep.py calls the 'AgentRegistration' method that is located in the 'AgentRegistration.py'.
 
 #. Go to the directory of the ITD TES Platform and perform the steps listed below:
 
    #. Generate YAML file for AMES by executing the below command:
    
-      python YAMLWriter.py
+      python YAMLWriter.py NTxBus NLSE TxBus
+   
+      The above commands depend on the following user-specified parameters: 
+   
+      * NTxBus - The number of transmission buses
+   
+      * NLSE - The number of LSEs present in the tranmission model
+   
+      * TxBus - The transmission bus to which the distribution system is considered to be connected to (Note: This input is needed if this model is used within an ITD system, else it defaults to 1)
+   
+      (Example usage: python YAMLWriter.py 2 1 1)  
+      
+      The generated YAML file contains the required subscriptions for configuring AMES.
+      
 
    #. Set the following parameters in the runITD.bat
 
@@ -90,7 +107,7 @@ Steps involved in execution:
 
       * NDistSys - Number of distribution systems monitored by the IDSO
      
-      * DistFeederFileName - The name of the distribution feeder file given in Step 1 (without '.glm' extension), e.g. IEEE123, IEEE13, etc
+      * FeederFileName - The name of the feeder file given in Step 1 (without '.glm' extension), e.g. IEEE123, IEEE13, etc
 
       * C - Choose an appropriate case; 
 
@@ -110,3 +127,13 @@ Steps involved in execution:
    * FileName - The name of the input data file, e.g. 2BusTestCase
    
 #. Check additional instructions starting from Step 2 provided at https://github.com/ITDProject/AMES/blob/V5.1/USAGE.pdf
+
+   
+**Miscellaneous Notes:** 
+
+* User can end the simulation run in the middle of the run by executing 'kill5570.bat'. Executing 'list5570.bat' lists all the processes. If you perform 'kill5570.bat', make sure to run 'list5570.bat' shows no process before executing another 'runIDSO.bat' operation. 
+* If a user is interested to run transmission processes only, 'runAMES.bat' needs to be used in the place of 'runITD.bat'.
+* AMES generates a lot of temporary files. To delete them, execute 'deleteTempFiles.bat'. 
+* Note for developers: 
+	* For 'import fncs' to work, the environmental variable $PATH needs to be appended to add location of 'fncs.py'.
+	* If you make modifications to AMESV5.1, it can be compiled from ITD TES Platform repository as well by using 'compileAMES.bat'. Make sure that you have set the correct path and version by editing the file compileAMES.bat. 
