@@ -1,4 +1,4 @@
-**# ITDTESPlatformV2.1**
+**# ITDTESPlatform**
 
 The code/data in this repository are for ITDTESPlatformV2.1 provided in support of the ITD Project. The details of this project can be found at http://www2.econ.iastate.edu/tesfatsi/ITDProjectHome.htm
 
