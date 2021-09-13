@@ -2,7 +2,7 @@
 
 The code/data in this repository are for the ITD TES Platform, Versions 2.XX and later, developed in support of the Integrated Transmission and Distribution (ITD) Project. Details about this project can be found at http://www2.econ.iastate.edu/tesfatsi/ITDProjectHome.htm
 
-A preliminary version of this platform, called the ITD TES PLATFORM V1.0, was developed and reported in:  Hieu T. Nguyen, Swathi Battula, Rohit Reddy Takkala, and Leigh Tesfatsion (2019), "An Integrated Transmission and Distribution Test System for Evaluation of Transactive Energy Designs," *Applied Energy*, Volume 240, 666-679. 
+A preliminary version of this platform, called the ITD TES PLATFORM V1.0, was developed and reported in:  Hieu T. Nguyen, Swathi Battula, Rohit Reddy Takkala, Zhaoyu Wang, and Leigh Tesfatsion (2019), "An Integrated Transmission and Distribution Test System for Evaluation of Transactive Energy Designs," *Applied Energy*, Volume 240, 666-679. 
 
 The ITD TES Platform V2.XX (and later) provided in this repository do not build on V1.0. Currently, these versions are only supported on a Windows operating system.
 
