@@ -1,10 +1,10 @@
 **# ITDTESPlatform**
 
-The code/data in this repository are for the ITD TES Platform, versions 2.XX and later, developed in support of the Integrated Transmission and Distribution (ITD) Project. Details about this project can be found at http://www2.econ.iastate.edu/tesfatsi/ITDProjectHome.htm
+The code/data provided in this repository are for the ITD TES Platform, versions 2.XX and later.  This platform supports the modeling and performance testing of Transactive Energy System (TES) designs implemented within Integrated Transmission and Distribution (ITD) systems.  This platform was developed as part of our ITD project. Details about this project can be found at http://www2.econ.iastate.edu/tesfatsi/ITDProjectHome.htm
 
 A preliminary version of this platform, called the ITD TES PLATFORM V1.0, was developed and reported by:  Hieu T. Nguyen, Swathi Battula, Rohit Reddy Takkala, Zhaoyu Wang, and Leigh Tesfatsion (2019), "An Integrated Transmission and Distribution Test System for Evaluation of Transactive Energy Designs," *Applied Energy*, Volume 240, 666-679. 
 
-The ITD TES Platform V2.XX (and later) provided in this repository do not build on V1.0. Currently, these versions are only supported on a Windows operating system.
+Versions 2.XX (and later) of the ITD TES Platform do not build on version 1.0. Currently, versions 2.XX (and later) are only supported on a Windows operating system.
 
 **Installation Instructions:**
 
@@ -147,8 +147,8 @@ The ITD TES Platform V2.XX (and later) provided in this repository do not build 
 **Miscellaneous Notes:** 
 
 * Users can end a simulation run in the middle of the run by executing 'kill5570.bat'. Executing 'list5570.bat' lists all currently running processes. If you perform 'kill5570.bat', you should next be sure to run 'list5570.bat' to check that no processes are currently running before you attempt to execute another 'runIDSO.bat' operation. 
-* If a user is interested to run transmission processes only, 'runAMES.bat' needs to be used in place of 'runITD.bat'.
-* AMES generates a lot of temporary files. To delete them, execute 'deleteTempFiles.bat'. 
+* If a user wishes to run transmission processes only, 'runAMES.bat' needs to be used in place of 'runITD.bat'.
+* AMES generates many temporary files. To delete them, execute 'deleteTempFiles.bat'. 
 * Note for developers: 
 	* For 'import fncs' to work, the environmental variable $PATH needs to be appended to add the location of 'fncs.py'.
-	* If you make modifications to AMES, you can compile the modified version of AMES from the ITD TES Platform repository by using 'compileAMES.bat'. Make sure that you have set the correct path and version by editing the file compileAMES.bat. 
+	* If you make modifications to AMES, you can compile the modified version of AMES from the ITD TES Platform repository by running 'compileAMES.bat'. Make sure that you edit 'compileAMES.bat' to reflect the correct path and version number before you run it.
