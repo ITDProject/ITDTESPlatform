@@ -146,9 +146,9 @@ The ITD TES Platform V2.XX (and later) provided in this repository do not build 
    
 **Miscellaneous Notes:** 
 
-* User can end the simulation run in the middle of the run by executing 'kill5570.bat'. Executing 'list5570.bat' lists all the processes. If you perform 'kill5570.bat', make sure to run 'list5570.bat' shows no process before executing another 'runIDSO.bat' operation. 
-* If a user is interested to run transmission processes only, 'runAMES.bat' needs to be used in the place of 'runITD.bat'.
+* Users can end a simulation run in the middle of the run by executing 'kill5570.bat'. Executing 'list5570.bat' lists all the processes. If you perform 'kill5570.bat', make sure to run 'list5570.bat' shows no process before executing another 'runIDSO.bat' operation. 
+* If a user is interested to run transmission processes only, 'runAMES.bat' needs to be used in place of 'runITD.bat'.
 * AMES generates a lot of temporary files. To delete them, execute 'deleteTempFiles.bat'. 
 * Note for developers: 
 	* For 'import fncs' to work, the environmental variable $PATH needs to be appended to add location of 'fncs.py'.
-	* If you make modifications to AMES, it can be compiled from ITD TES Platform repository as well by using 'compileAMES.bat'. Make sure that you have set the correct path and version by editing the file compileAMES.bat. 
+	* If you make modifications to AMES, it can be compiled from the ITD TES Platform repository by using 'compileAMES.bat'. Make sure that you have set the correct path and version by editing the file compileAMES.bat. 
