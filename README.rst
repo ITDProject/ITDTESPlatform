@@ -8,7 +8,7 @@ A preliminary version of the ITD TES platform was developed by Hieu T. Nguyen et
 
 [2] Hieu Trung Nguyen, Swathi Battula, Rohit Reddy Takkala, Zhaoyu Wang, and Leigh Tesfatsion (2019), "An Integrated Transmission and Distribution Test System for Evaluation of Transactive Energy Designs," Applied Energy, Volume 240, 666-679.
 
-The ITD TES Platform V2.1 does not directly build on this preliminary version. ITDTESPlatformV2.1 is only supported on a Windows operating system.
+The ITD TES Platform V2.1 does not directly build on this preliminary version. It is only supported on a Windows operating system.
 
 The folder 'TDInterconnection' contains linkage files necessary for simulating the transmission and distribution components of the ITD TES Platform V2.1 in a coordinated manner. 
 
