@@ -10,6 +10,8 @@ A preliminary version of the ITD TES platform was developed by Hieu T. Nguyen et
 
 Versions 2.XX (and later) of the ITD TES Platform do not build on version 1.0. Currently, versions 2.XX (and later) are only supported on a Windows operating system.
 
+The folder 'TDInterconnection' contains linkage files necessary for simulating the transmission and distribution components of the ITD TES Platform V2.XX in a coordinated manner.
+
 **Installation Instructions:**
 
 #. Download the contents of this repository into a folder, let's call it 'ITDTESPlatform'. Now make 'ITDTESPlatform' the parent directory to install the components given in the steps 2 and 3.
