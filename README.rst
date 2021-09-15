@@ -27,7 +27,7 @@ The folder 'TDInterconnection' contains linkage files necessary for simulating t
 
    #. Generate distribution system feeder populated with households with the choice of 'Household Type' by executing the following:
 
-      python FeederWriter.py FeederFileName FeederLoadFileName NDistSys Mix Type TxBus
+      python feederWriter.py FeederFileName FeederLoadFileName NDistSys Mix Type TxBus
    
       The above commands depend on the following user-specified parameters: 
    
@@ -51,9 +51,9 @@ The folder 'TDInterconnection' contains linkage files necessary for simulating t
 
         * Set Type to 3 for High Structure Quality Type;
 	   
-      * TxBus - The transmission bus to which the distribution system is considered to be connected to (Note: This input is needed if this model is used within an ITD system, else it defaults to 1)
+      * TxBus - The transmission bus to which the distribution system is considered to be connected. (Note: This input is needed if this model is used within an ITD system, else it defaults to 1)
    
-      Example usage: python FeederWriter.py IEEE123Feeder.glm IEEE123LoadObjects.txt 1 0 2 1;
+      Example usage: python feederWriter.py IEEE123Feeder.glm IEEE123LoadObjects.txt 1 0 2 1;
    
       Outcomes:
    
@@ -67,7 +67,7 @@ The folder 'TDInterconnection' contains linkage files necessary for simulating t
 
    #. Generate required additional files by executing the following command:
    
-      python AgentPrep.py FileName NDistSys TxBus
+      python agentPreparation.py FileName NDistSys TxBus
    
       The above commands depend on the following user-specified parameters: 
    
@@ -75,9 +75,9 @@ The folder 'TDInterconnection' contains linkage files necessary for simulating t
    
       * NDistSys - The number of distribution systems that are handled by the IDSO
    
-      * TxBus - The transmission bus to which the distribution system is considered to be connected to (Note: This input is needed if this model is used within an ITD system, else it defaults to 1)
+      * TxBus - The transmission bus to which the distribution system is considered to be connected. (Note: This input is needed if this model is used within an ITD system, else it defaults to 1)
    
-      Example usage: python AgentPrep.py IEEEModified1 1 1
+      Example usage: python agentPreparation.py IEEE123FeederModified1 1 1
     		
       Outcomes: 
    
@@ -103,7 +103,7 @@ The folder 'TDInterconnection' contains linkage files necessary for simulating t
    
       * NLSE - The number of LSEs present in the tranmission model
    
-      * TxBus - The transmission bus to which the distribution system is considered to be connected to (Note: This input is needed if this model is used within an ITD system, else it defaults to 1)
+      * TxBus - The transmission bus to which the distribution system is considered to be connected. (Note: This input is needed if this model is used within an ITD system, else it defaults to 1)
    
       (Example usage: python YAMLWriter.py 2 1 1)  
       
