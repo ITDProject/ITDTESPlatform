@@ -1,10 +1,10 @@
 # ITDTESPlatformV2.0
 
-The code/data in this repository are for ITDTESPlatformV2.0 provided in support of the thesis Ref. [1]. 
+The code/data in this repository are for ITD TES Platform V2.0 provided in support of the thesis Ref. [1]. 
 
 [1] Swathi Battula (2021),  "Transactive Energy System Design for Integrated Transmission and Distribution Systems,” Graduate Theses and Dissertations, 18454, Iowa State University, Ames, IA. https://lib.dr.iastate.edu/etd/18454
 
-ITDTESPlatfromV2.0 is only supported on a Windows operating system.
+ITD TES Platfrom V2.0 is only supported on a Windows operating system.
 
 Installation Instructions:
 
