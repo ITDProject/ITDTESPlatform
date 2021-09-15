@@ -1,6 +1,6 @@
 **# ITDTESPlatform**
 
-This is the main branch for the ITD TES Platform, a co-simulated software platform permitting users to undertake Transactive Energy System (TES) design studies for Integrated Transmission and Distribution (ITD) systems.  See, for example, the annotated links to the ITD TES design studies undertaken for the ITD Project that are provided at the project homepage: http://www2.econ.iastate.edu/tesfatsi/ITDProjectHome.htm
+This is the main branch for the ITD TES Platform, a co-simulated software platform permitting users to undertake Transactive Energy System (TES) design studies for Integrated Transmission and Distribution (ITD) systems.  See, for example, the annotated links to the ITD TES design studies undertaken for the ITD Project that are provided at the project homepage: http://www2.econ.iastate.edu/tesfatsi/ITDProjectHome.htm. Currently, versions 2.XX (and later) are only supported on a Windows operating system.
 
 A preliminary version of the ITD TES platform was developed by Hieu T. Nguyen et al. [1-2]:
 
@@ -8,7 +8,7 @@ A preliminary version of the ITD TES platform was developed by Hieu T. Nguyen et
 
 [2] Hieu Trung Nguyen, Swathi Battula, Rohit Reddy Takkala, Zhaoyu Wang, and Leigh Tesfatsion (2019), "An Integrated Transmission and Distribution Test System for Evaluation of Transactive Energy Designs," Applied Energy, Volume 240, 666-679. 
 
-Versions 2.XX (and later) of the ITD TES Platform do not build on version 1.0. Currently, versions 2.XX (and later) are only supported on a Windows operating system.
+Versions 2.XX (and later) of the ITD TES Platform do not build on version 1.0. 
 
 The folder 'TDInterconnection' contains linkage files necessary for simulating the transmission and distribution components of the ITD TES Platform V2.XX in a coordinated manner.
 
