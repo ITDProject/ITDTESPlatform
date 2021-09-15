@@ -1,6 +1,6 @@
 **# ITDTESPlatformV2.1**
 
-This branch is the code/data repository for Version 2.1 of the ITD TES Platform, a co-simulated software platform permitting users to undertake Transactive Energy System (TES) design studies for Integrated Transmission and Distribution (ITD) systems. See, for example, the annotated links to the ITD TES design studies undertaken for the ITD Project that are provided at the project homepage: http://www2.econ.iastate.edu/tesfatsi/ITDProjectHome.htm. 
+This branch provides code/data for Version 2.1 of the ITD TES Platform, a co-simulated software platform permitting users to undertake Transactive Energy System (TES) design studies for Integrated Transmission and Distribution (ITD) systems. See, for example, the annotated links to the ITD TES design studies undertaken for the ITD Project that are provided at the project homepage: http://www2.econ.iastate.edu/tesfatsi/ITDProjectHome.htm. 
 
 Version 2.1 only runs on a Windows operating system.
 
