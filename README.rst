@@ -23,27 +23,28 @@ The folder 'TDInterconnection' contains linkage files necessary for simulating t
 #. Download the contents of the distribution component of ITDTESPlatform located at https://github.com/ITDProject/DistributionSystem into the directory 'ITDTESPlatform'. Follow the installation instructions given at https://github.com/ITDProject/DistributionSystem/blob/main/README.rst to install the necessary components.
 
 
+
 **Steps involved in execution:**
 
 #. Go to the directory of the distribution component and perform the execution steps listed below:
 
-   #. Generate distribution system feeder populated with households with the choice of 'Household Type' by executing the following:
+   #. Generate distribution grid populated with households with the choice of 'Household Type' by executing the following:
 
-      python feederWriter.py FeederFileName FeederLoadFileName NDistSys Mix Type TxBus
+      python generateModifiedGrid.py FileName LoadFileName NDistSys Mix Type TxBus
    
       The above commands depend on the following user-specified parameters: 
    
-      * FeederFileName - The name of the feeder file, e.g. IEEE123.glm, IEEE13.glm, etc
+      * FileName - The name of the input distribution grid model file, e.g. IEEE123.glm, IEEE13.glm, etc
    
-      * FeederLoadFileName - The name of the file that has original feeder load details
+      * LoadFileName - The name of the file that has original load details of the grid
    
       * NDistSys - The number of distribution systems that are handled by the IDSO
    
       * Mix - Represents if the chosen households are a mix of different structure types or single structure type;
    
-        * Mix is set to 0: A single structure type, set by input parameter 'Type' described below, is chosen to populate the distribution system feeder;
+        * Mix is set to 0: A single structure type, set by input parameter 'Type' described below, is chosen to populate the distribution grid;
    
-        * Mix is set to 1: A mix of structure types Low, Medium, High are used to populate the distribution system feeder;
+        * Mix is set to 1: A mix of structure types Low, Medium, High are used to populate the distribution grid;
 	 
       * Type - Represents household's structure quality type; 
 
@@ -55,17 +56,17 @@ The folder 'TDInterconnection' contains linkage files necessary for simulating t
 	   
       * TxBus - The transmission bus to which the distribution system is considered to be connected. (Note: This input is needed if this model is used within an ITD system, else it defaults to 1)
    
-      Example usage: python feederWriter.py IEEE123Feeder.glm IEEE123LoadObjects.txt 1 0 2 1;
+      Example usage: python generateModifiedGrid.py IEEE123Grid.glm IEEE123LoadObjects.txt 1 0 2 1;
    
       Outcomes:
    
-      * A '.glm' file for the distribution system: It is the required distribution feeder populated by households
+      * A '.glm' file for the distribution system: It is the required distribution grid populated by households
    
       * A '.yaml' file for the IDSO: IDSO yaml file would contain all necessary details required to communicate with distribution agents (and transmission agents if this model is used within an ITD)
    
       * A '.bat' file for the households: It would contain the required code to run household processes, used in Step 4.
     
-      Sample outcomes: IEEE123FeederModified1.glm, IDSO.yaml, runHouseholds.bat
+      Sample outcomes: IEEE123GridModified1.glm, IDSO.yaml, runHouseholds.bat
 
    #. Generate required additional files by executing the following command:
    
@@ -73,13 +74,13 @@ The folder 'TDInterconnection' contains linkage files necessary for simulating t
    
       The above commands depend on the following user-specified parameters: 
    
-      * FileName - The name of the distribution feeder generated in the above step
+      * FileName - The name of the distribution grid generated in the above step
    
       * NDistSys - The number of distribution systems that are handled by the IDSO
    
       * TxBus - The transmission bus to which the distribution system is considered to be connected. (Note: This input is needed if this model is used within an ITD system, else it defaults to 1)
    
-      Example usage: python agentPreparation.py IEEE123FeederModified1 1 1
+      Example usage: python agentPreparation.py IEEE123GridModified1 1 1
     		
       Outcomes: 
    
@@ -89,7 +90,7 @@ The folder 'TDInterconnection' contains linkage files necessary for simulating t
    
       * '.json' registration files for the households: Each file contains input information (household attributes) specific to each household
    
-      Sample outcomes: IEEE123FeederModified1_FNCS_Config.txt, IDSO_registration.json, etc
+      Sample outcomes: IEEE123GridModified1_FNCS_Config.txt, IDSO_registration.json, etc
    
       Note: 'agentPreparation.py' imports 'agentRegistration' class from 'agentRegistration.py'.
 
@@ -126,11 +127,11 @@ The folder 'TDInterconnection' contains linkage files necessary for simulating t
 
       * deltaT - Length (seconds) of each control-step of the Five-Step TES design
 
-      * NoOfHouses - Number of households connected to the distribution system feeder
+      * NoOfHouses - Number of households connected to the distribution grid
 
       * NDistSys - Number of distribution systems monitored by the IDSO
      
-      * FeederFileName - The name of the feeder file given in Step 1 (without '.glm' extension), e.g. IEEE123, IEEE13, etc
+      * FileName - The name of the input distribution grid model file given in Step 1.i (without '.glm' extension), e.g. IEEE123, IEEE13, etc
 
       * C - Choose an appropriate case; 
 
