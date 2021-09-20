@@ -77,8 +77,6 @@ The folder 'TDInterconnection' contains linkage files necessary for simulating t
       * DSDir - Set the path of HouseholdFormulationRepository folder to this parameter
       * AMESVersion - Set the version of AMES (e.g. AMESV5.0)
 
-      * NDay - Number of days the simulation needs to be carried out
-
       * NHour - Number of additional hours the simulation needs to be carried out after the simulation is run for NDay
 
       * deltaT - Length (seconds) of each control-step of the Five-Step TES design
@@ -103,3 +101,10 @@ The folder 'TDInterconnection' contains linkage files necessary for simulating t
    
 #. Check additional instructions starting from Step 2 provided at https://github.com/ames-market/AMES-V5.0/blob/master/USAGE.pdf
    
+   
+**Miscellaneous Notes:** 
+
+* Users can end a simulation run in the middle of the run by executing 'kill5570.bat'. Executing 'list5570.bat' lists all currently running processes. If you perform 'kill5570.bat', you should next be sure to run 'list5570.bat' to check that no processes are currently running before you attempt to execute another 'runIDSO.bat' operation. 
+* AMES generates many temporary files. To delete them, execute 'deleteTempFiles.bat'. 
+* Note for developers:
+	* If you make modifications to AMES, you can compile the modified version of AMES from the ITD TES Platform repository by running 'compileAMES.bat'. Make sure that you edit 'compileAMES.bat' to reflect the correct path and version number before you run it.
