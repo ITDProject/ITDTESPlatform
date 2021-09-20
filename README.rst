@@ -83,7 +83,7 @@ The folder 'TDInterconnection' contains linkage files necessary for simulating t
 
       * NoOfHouses - Number of households connected to the distribution grid
 
-      * NDsystems - Number of distribution systems monitored by the IDSO
+      * NDistSys - Number of distribution systems monitored by the IDSO
 
       * C - Choose an appropriate case; 
 
