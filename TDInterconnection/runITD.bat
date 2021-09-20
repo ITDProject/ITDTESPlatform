@@ -27,11 +27,11 @@ for /f "tokens=1,2" %%a in (%AMESDir%/DATA/%1.dat) do ( if %%a==%Param% set RTOP
 
 set "NHour=4"
 set "deltaT=300"
-set "NoOfHouses=927"
+set "NoOfHouseholds=927"
 set "NDistSys=1"
-set "DistFeederFileName=IEEE123Feeder"
+set "FileName=IEEE123Grid"
 set /a "tmax=%MaxDay%*86400+%NHour%*3600"
-set /a "NoOfProcesses=%NoOfHouses%+%NDistSys%+2+2"
+set /a "NoOfProcesses=%NoOfHouseholds%+%NDistSys%+2+2"
 
 set "C=2"
 REM choose 0 for FRP, 1 for PR, 2 for LF 
@@ -76,7 +76,7 @@ set FNCS_CONFIG_FILE=%DSYAMLFilesDir%/IDSO.yaml
 start /b cmd /c python ./IDSO/IDSO.py %DSJsonFilesDir%/IDSO_registration.json %tmax% %deltaT% %NDistSys% %C% %FRP% %PL% %TPLR% %RefLoad% ^>%LogFilesDir%/IDSO.log 2^>^&1
 
 set FNCS_LOG_LEVEL=DEBUG2
-FOR /L %%i IN (1,1,%NDistSys%) DO start /b cmd /c gridlabd %DSInputFilesDir%/%DistFeederFileName%Modified%%i.glm ^>%LogFilesDir%/gridlabd%%i.log 2^>^&1
+FOR /L %%i IN (1,1,%NDistSys%) DO start /b cmd /c gridlabd %DSInputFilesDir%/%FileName%Modified%%i.glm ^>%LogFilesDir%/gridlabd%%i.log 2^>^&1
 
 set FNCS_LOG_LEVEL=
 runHouseholds927.bat
