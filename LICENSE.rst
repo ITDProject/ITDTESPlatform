@@ -1,6 +1,6 @@
-ITD TES Platform V2.0, Copyright (c) 2021
+ITD TES Platform V2.0, BSD 3-Clause License 
 
-BSD 3-Clause License
+Copyright (c) 2021
 
 All rights reserved.
 
