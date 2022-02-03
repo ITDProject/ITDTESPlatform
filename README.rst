@@ -15,3 +15,5 @@ A preliminary version of an ITD platform for TES studies, released by the name I
 The ITD TES Platform does not build on the code/data developed for the ITD TES System in Refs. [1-2]. 
 
 The folder 'TDInterconnection' contains linkage files necessary for simulating the transmission and distribution components of the ITD TES Platform in a coordinated manner.
+
+The released versions of the code can be found at https://github.com/ITDProject/ITDTESPlatform/releases.
