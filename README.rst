@@ -10,7 +10,7 @@ A preliminary version of an ITD platform for TES studies, released by the name I
 
 [2] Hieu Trung Nguyen, Swathi Battula, Rohit Reddy Takkala, Zhaoyu Wang, and Leigh Tesfatsion (2019), "An Integrated Transmission and Distribution Test System for Evaluation of Transactive Energy Designs," Applied Energy, Volume 240, 666-679.
 
-The ITD TES Platform V2.1 does not build on the code/data developed for the ITD TES System in [1-2]. 
+The ITD TES Platform V2.1 does not build on the code/data developed for the ITD TES System in Refs. [1-2]. 
 
 The ITD TES Platform V2.1 extends V2.0. It replicates the results of V2.0 (i.e., it generates the same output for the same input), but FNCS communications are implemented more efficiently.
 
