@@ -4,7 +4,7 @@ This branch provides code/data for Version 2.1 of the ITD TES Platform, a co-sim
 
 Version 2.1 only runs on a Windows operating system.
 
-A preliminary version of an ITD platform for TES studies, released by the name ITD TES System, was developed by Hieu T. Nguyen et al. [1-2]:
+A preliminary version of an ITD platform for TES studies, released by the name ITD TES System, was developed by Hieu T. Nguyen, Swathi Battula, Rohit Reddy Takkala, and Leigh Tesfatsion; see the following Refs. [1-2]:
 
 [1] Hieu Trung Nguyen, Swathi Battula, Rohit Reddy Takkala, and Leigh Tesfatsion (2017), ITD TES Platform: Code and data repository. URL: https://github.com/htnnguyen/ITD_TES
 
